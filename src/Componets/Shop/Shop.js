@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Shop.css';
 import ShopDetails from '../ShopDetails/ShopDetails';
+import Card from '../Card/Card';
 
 const loadLaptop = [
     {
@@ -345,9 +346,11 @@ const loadLaptop = [
 const Shop = () => {
     const fakeData = loadLaptop.slice(0, 8);
     const [product, setProduct] = useState(fakeData);
+    const [card, setCard] = useState([]);
 
     const handleAddProduct = (singleLaptop) => {
-        console.log("click me", singleLaptop);
+        const newCard = [...card, singleLaptop];
+        setCard(newCard);
     }
 
     return (
@@ -359,7 +362,8 @@ const Shop = () => {
                     }
                 </div>
                 <div className="col-md-3 col-12 shop-right pt-3">
-                    <h5>this is card section</h5>
+
+                    <Card singleCard={card}></Card>
                 </div>
             </div>
         </div>
