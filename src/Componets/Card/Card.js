@@ -35,6 +35,7 @@ const Card = (props) => {
             <h5>Items Add : {cart.length}</h5>
             <h5>Shipping Cast : {shipping}</h5>
             <h5>Total Price : {totalFixed + shipping}</h5>
+            <button type="button" className='btn btn-success'>Checkout Now</button>
         </div>
     );
 };
